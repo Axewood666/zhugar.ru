@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css\restclient.css">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function openForm(id) 
+        {
+            document.getElementById("myForm").style.display = "block"; 
+            document.getElementById("idforudp").setAttribute('value', id)
+        }
+            
+        function closeForm() 
+        {
+            document.getElementById("myForm").style.display = "none";
+        } 
+    </script>
+    <div class="container">
+        <div class="row post-list g-2">            
+        </div>     
+        <div class="row col-12">
+           <div class="form-news">
+           <div class="form-group">
+            <div class="form-popup" id="myForm">
+                <form action="#" class="form-container">
+                    <h3>Редактирование статьи</h3>
+                    <label for="idforudp"><b>Номер статьи:</b></label>
+                    <input type="number" name="idforudp" id="idforudp" value='' required>
+                    <label for="new-title"><b>Заголовок:</b></label>
+                    <input type="text" name="new-title" id="new-title" required>
+                    <label for="new-content"><b>Статья:</b></label>
+                    <textarea type="text" name="new-content" id="new-content" style="height: 200px;" required></textarea>
+                    <button type="button" class="btn" onclick="updNews(getElementById('idforudp').value)">Отправить</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Закрыть</button>
+                </form>
+                </div>
+            </div>
+            <h3>Добавление статьи</h3>
+              <label for="title" ><b>Заголовок:</b></label>
+              <input type="text" name="title" id="title" class="form-control" >
+            </div>
+            <div class="form-group">
+              <label for="content"><b>Статья:</b></label>              
+              <textarea name="content" id="content" style="height: 200px;" class="form-control"></textarea>
+              <button class="btn btn-primary" style="margin: 10px 0px 10px 0px;" onclick="addNews()">Добавить</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/restclient.js">
+    </script>
+
+</body>
+</html>
